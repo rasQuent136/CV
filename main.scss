@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700i&display=swap');
+
+$web_width: 1280px;
+$primary_color: #ffc831;
+$light_color: #f4f4f4;
+$dark_color: #1d1d1d;
+$main_bg: url('../img/analyste-programmeur.jpg');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; }
+a { text-decoration: none; }
+ul { list-style-type: none; }
+h1, h2, h3, h4 { font-weight: 500; text-transform: uppercase; }
+
+// Utilitaires
+
+%btn_prop_shared { 
+  display: inline-block;
+  padding: 0.8rem 1.6rem; 
+  border-radius: 5px;
+  border: none;
+  transition: all 0.7s;
+}
+
+.btn {
+  &_cta, &_projects, &_project_section {
+    @extend %btn_prop_shared;
+    color: $dark_color;
+    background-color: $primary_color;
+   
+    
+
+    &:hover {
+      color: $primary_color;
+      background-color: $dark_color;
+    }
+  }
+
+  &_projects {
+    padding: 0.8rem 2.6rem;
+
+    &:hover {
+      background-color: $light_color;
+      color: $dark_color;
+    }
+  }
+
+  &_project_section {
+    padding: 0.7rem 1.4rem;
+    background-color: $dark_color;
+    color: $light_color;
+
+    &:hover {
+      color: $dark_color;
+      background-color: $light_color;
+      border: 1px solid black;
+    }
+  }
+}
+
+.container {
+  max-width: $web_width;
+  margin: auto;
+  overflow: hidden;
+}
+
+.section_title { font-size: 2.2rem; padding-bottom: 0.5rem; }
+.section_text { font-size: 1.2rem; }
+.text_center { text-align: center; }
+
+.p {
+  &_0 { padding: 5rem; }
+  &_1 { padding: 4rem; }
+  &_2 { padding: 3rem; }
+  &_3 { padding: 2rem; }
+  &_4 { padding: 1rem; }
+}
+
+.ptb {
+  &_0 { padding: 5rem 0; }
+  &_1 { padding: 4rem 0; }
+  &_2 { padding: 3rem 0; }
+  &_3 { padding: 2rem 0; }
+  &_4 { padding: 1rem 0; }
+}
+
+.section_separation { width: 50%; margin: 2.5rem auto; color: $light_color; }
+
+// Navigation
+
+.main_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark_color;
+  padding: 0.5rem 1rem;
+
+  ul { display: flex; }
+  li { padding: 1rem 1.5rem; }
+
+  a {
+    color: #fff;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px transparent solid;
+    transition: border-color 1s;
+
+    .logo_title {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6rem;
+      padding: 5px 0 0 0;
+      color: #fff;
+      text-transform: none;
+    }
+
+    &:hover { border-color: $primary_color; }
+    &.current_page { border-color: $primary_color; }
+  }
+}
+
+// Header
+
+.header {
+  background: $main_bg no-repeat center top/cover;
+  height: 93.4vh;
+  color: #fff;
+
+  .header_content {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5.4rem;
+
+    .cta_title { font-size: 4.5rem; }
+    .cta_catch { font-size: 1.2rem; padding: 0.6rem 0 2.2rem 0; }
+  }
+}
+
+// Section 'technologies'
+
+.section_technologies, .about_section_technologies {
+  background-color: #fdfdfd;
+
+  .technologies {
+    margin-top: 3rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    div { margin: 0 0.5rem; }
+
+    .fas {
+      color: $primary_color;
+      background-color: $dark_color;
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.7rem;
+      border-radius: 50%;
+    }
+
+    h3 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+  }
+}
+
+// Section 'Projets'
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .projects_img { background: url(../img/dev.jpg) no-repeat center center/cover; }
+
+  .projects_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $dark_color;
+    color: $light_color;
+
+    ul { 
+      margin-bottom: 2.5rem; 
+
+      .fas, .far { padding-bottom: 0.6rem; }
+      .projects_title { padding-bottom: 0.5rem; }
+      .projects_number { font-size: 1.3rem; }
+    }
+  }
+
+  a { margin: auto; grid-column: 1/4; }
+}
+
+// About section
+
+.about_section {
+  .about_info {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 1.5rem;
+
+    .bio_content {
+      grid-column: 2 /span 3;
+      border-left: 3px solid $primary_color;
+      padding: 1.5rem 3.5rem;
+
+      .about_title { font-size: 1.7rem; margin-bottom: 1rem; }
+      ul li { margin-bottom: 1.2rem; }
+    }
+
+    .about_icon_title { font-size: 1.3rem; padding: 0.7rem 0; }
+  }
+}
+
+.about_section_technologies {
+  background-color: $dark_color;
+  color: $light_color;
+
+  .section_text { margin-bottom: 1.5rem; }
+
+  .progress_bar {
+    height: 1rem;
+    background-color: $light_color;
+    border-radius: 4px;
+    margin-bottom: 0.9rem;
+
+    div {
+      height: 100%;
+      background-color: $primary_color;
+      border-radius: 4px;
+      margin-top: 0.1rem;
+    }
+
+    &_10 { width: 10%; }
+    &_20 { width: 20%; }
+    &_30 { width: 30%; }
+    &_40 { width: 40%; }
+    &_50 { width: 50%; }
+    &_60 { width: 60%; }
+    &_70 { width: 70%; }
+    &_80 { width: 80%; }
+    &_90 { width: 90%; }
+    &_100 { width: 100%; }
+  }
+
+ 
+
+  .technologies {
+    .fas {
+      background-image: url(/var/www/html/courPhp/coursLionel/Portfolio/dist/img/html.png);
+      
+    }
+  }
+}
+
+// Projets
+
+.projects_section {
+  .project {
+    display: grid;
+    grid-gap: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem 0;
+
+    img { margin-left: 0.7rem; }
+    .fas { padding-right: 0.3rem; }
+    .project_text { margin: 0.7rem 0.7rem; }
+  }
+}
+
+// Contact
+
+.contact_section {
+  form { width: 960px; margin: auto; }
+
+  .label_input_fields {
+    display: grid;
+    grid-template-areas: 
+    'name email'
+    'message message';
+    grid-gap: 1.2rem;
+    margin-bottom: 0.8rem;
+
+    label { display: block; text-align: left; }
+
+    input, textarea {
+      border: 2px solid #d4d4d4;
+      border-radius: 5px;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      width: 100%;
+    }
+
+    .name_input { grid-area: name; }
+    .email_input { grid-area: email; }
+    .message_input { grid-area: message; }
+    .is_required:after { content: '*'; color: #dc143c; padding-left: 0.2rem; }
+  }
+}
+
+.contact_info_section {
+  background-color: $dark_color;
+  color: $light_color;
+
+  .contact_info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    i, h3 { padding-bottom: 0.4rem; }
+  }
+}
+
+// Footer
+
+.main_footer {
+  .footer_content {
+    color: $dark_color;
+
+    .contact_footer { margin-left: 3rem; }
+  }
+}
+
+@import 'media';

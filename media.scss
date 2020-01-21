@@ -1,0 +1,112 @@
+@media(max-width: 850px) {
+  .p {
+    &_0 { padding: 2.5rem; }
+    &_1 { padding: 2rem; }
+    &_2 { padding: 1.5rem; }
+    &_3 { padding: 1rem; }
+    &_4 { padding: 0.5rem; }
+  }
+  
+  .ptb {
+    &_0 { padding: 2.5rem 0; }
+    &_1 { padding: 2rem 0; }
+    &_2 { padding: 1.5rem 0; }
+    &_3 { padding: 1rem 0; }
+    &_4 { padding: 0.5rem 0; }
+  }
+
+  .main_nav {
+    flex-direction: column;
+    justify-content: center;
+
+    li { margin-top: 0.9rem; font-size: 0.9rem; padding: 1rem; }
+  }
+
+  // Page d'accueil
+
+  .header {
+    .header_content {
+      .cta_title { font-size: 2.5rem; }
+      .cta_catch { text-align: center; font-size: 1.1rem; }
+    }
+  }
+
+  .section_technologies {
+    .technologies {
+      display: block;
+      margin-top: 0.5rem;
+
+      .fas { margin-top: 2rem; }
+    }
+  }
+
+  .projects {
+    display: block;
+
+    .projects_img { display: none; }
+    .projects_content { display: block; }
+  }
+  
+  // Page contact
+
+  .contact_section {
+    form { width: 100%; }
+
+    .label_input_fields {
+      display: block;
+
+      label { margin-top: 1.2rem; padding-left: 0.9rem; }
+      textarea { margin-bottom: 1.4rem; }
+
+      input, textarea { width: 90%; }
+    }
+  }
+
+  .contact_info_section {
+    padding-bottom: 2.2rem;
+
+    .contact_info { 
+      display: block; 
+
+      .fas, .fab { margin-top: 1.7rem; }
+    }
+  }
+}
+
+@media(max-width: 1250px) {
+  // Page about
+
+  .about_section { 
+    .about_info {
+      display: block; 
+    }
+  }
+
+  .about_section_technologies {
+    h3, .progress_bar { margin: 0.3rem 0.5rem; }
+    .section_separation { margin-bottom: 1rem; }
+
+    .technologies {
+      display: block;
+
+      div .fas { margin-top: 1.7rem; }
+    }
+  }
+
+  // Page projets
+
+  .projects_section {
+    .project { 
+      display: block; }
+  }
+
+  // Footer
+
+  .main_footer {
+    margin: 0.6rem;
+
+    .footer_content {
+      .contact_footer { margin: 0; }
+    }
+  }
+}
